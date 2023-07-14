@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-sm navbar-da" style="background-color:black">
+           
+    <div class="container-fluid">
+        <button onclick="history.back()"class="btn btn-primary navbar-btn"style="width:80;height: 35;">Go Back</button>   
+    <ul class = "nav navbar-nav">
+        
+        <li class = "nav-item">
+            <a routerLink="/itemList" routerLinkActive="active" class="nav-link" ><p style="color:white">Item List</p></a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="/adminHome" routerLinkActive="active" class="nav-link" ><p style="color:white">Home </p></a>
+        </li>
+       
+    </ul>
+         <button (click)="logOut()"class="btn btn-danger navbar-btn">Log out</button>
+    </div>
+</nav>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+<div class="col-md-6 offset-md-3">
+    <h3>Update Item </h3>
+    <form (ngSubmit) = "updateItem()"style="background-color:#E6E6FA"#updateitemform="ngForm">
+        <!--Item Name-->
+        <div class="form-group">
+            <label> Item Name</label>
+            <input type="text" class ="form-control" id = "itemName"
+                [(ngModel)] = "item.itemName" name = "itemName"required pattern="[a-zA-Z'-'\s]*"#itemName="ngModel"
+                [class.is-invalid]="itemName.invalid&&itemName.touched"/>
+                
+                <div *ngIf="itemName.errors &&(itemName.invalid && itemName.touched)">
+                    <small class="text-danger" *ngIf="itemName.errors?.['required']">required field</small>
+                    <small class="text-danger"*ngIf="itemName.errors?.['pattern']">enter a valid name</small>
+                  </div>
+        </div>
+         <!--Item Quantity-->
+         <div class="form-group">
+            <label> Item Quantity</label>
+            <input type="text" class ="form-control" id = "item_quantity"
+                [(ngModel)] = "item.item_quantity" name = "item_quantity"required pattern="[0-9]{9}"#item_quantity="ngModel"
+                [class.is-invalid]="item_quantity.invalid&&item_quantity.touched"/>
+                
+                <div *ngIf="item_quantity.errors &&(item_quantity.invalid && item_quantity.touched)">
+                    <small class="text-danger" *ngIf="item_quantity.errors?.['required']">required field</small>
+                    <small class="text-danger"*ngIf="item_quantity.errors?.['pattern']">enter a valid name</small>
+                  </div>
+         </div>
+         <!--Item Cost-->
+         <div class="form-group">
+            <label> Item Cost</label>
+            <input type="text" class ="form-control" id = "item_cost"
+                [(ngModel)] = "item.item_cost" name = "item_cost"required pattern="[0-9]{9}"#item_cost="ngModel"
+                [class.is-invalid]="item_cost.invalid&&item_cost.touched"/>
+                
+                <div *ngIf="item_cost.errors &&(item_cost.invalid && item_cost.touched)">
+                    <small class="text-danger" *ngIf="item_cost.errors?.['required']">required field</small>
+                    <small class="text-danger"*ngIf="item_cost.errors?.['pattern']">enter a valid name</small>
+                  </div>
+         </div>
+    
+       <button class = "btn btn-success" type ="submit">UPDATE</button>
+    
+    </form>
+    </div> 
+  </div>
+ </div>
+</div>
+

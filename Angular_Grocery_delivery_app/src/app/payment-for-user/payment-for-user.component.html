@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm navbar" style="background-color:black">
+    <div class="container-fluid">
+        <ul class="nav navbar-da">
+            <button (click)="back()" class="btn btn-primary navbar-button">GO BACK</button>
+        </ul>
+    </div>
+</nav>
+<div class="row d-flex justify-content-center">
+    <div class="col-lg-4">
+<h2 style="text-align: center;" class="fw-bold mb-4"><b style="color: mediumblue;">Payment</b></h2>
+ <form #generatePaymentForm="ngForm" (ngSubmit)="generatePayment()">
+    <small class="text-danger">{{message}}</small>
+    <!-- Payment type-->
+    <div class="form-outline mb-5">
+        <label for="paymentType">Payment Type</label>
+        <input type="text" name="paymentType" class="form-control" placeholder="cod/upi" [(ngModel)]="payment.paymentType">
+    </div> 
+    <br/>
+    <button type="submit" class="btn btn-primary btn-block mb-4">Generate</button>
+ </form>
+    </div>
+    <div id="copyright" style="text-align: center;"><b style="color: oldlace;">&reg;All Rights Reserved</b>
+    </div>
+</div>         

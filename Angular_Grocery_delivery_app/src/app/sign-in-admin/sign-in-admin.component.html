@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm navbar" style="background-color:lightblue">
+    <div class="container-fluid">
+        <ul class="nav navbar-da">
+            <button (click)="back()" class="btn btn-primary navbar-button">GO BACK</button>
+        </ul>
+    </div>
+</nav>
+<div class="row d-flex justify-content-center">
+    <div class="col-lg-4">
+<h2 style="text-align: center;" class="fw-bold mb-4"><b style="color: mediumblue;">SIGN IN</b></h2>
+ <form #signInForm="ngForm" (ngSubmit)="loginAdmin()">
+    <small class="text-danger">{{message}}</small>
+    <div class="form-outline mb-5">
+        <label for="username">Username</label>
+        <input type="userName" name="userName" class="form-control" placeholder="UserName" [(ngModel)]="user.userName">
+    </div>
+    <div class="form-outline mb-5">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password">
+    </div>
+
+    <br/>
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
+ </form>
+    </div>
+    <div id="copyright" style="text-align: center;"><b style="color: oldlace;">&reg;All Rights Reserved</b>
+    </div>
+</div>    

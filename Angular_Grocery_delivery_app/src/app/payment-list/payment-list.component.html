@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm navbar-da" style="background-color:black">
+           
+    <div class="container-fluid">
+        <button (click)="back()"class="btn btn-primary navbar-btn"style="width:80;height: 35;">Go Back</button>   
+
+    <ul class = "nav navbar-nav">
+        <li class = "nav-item">
+            <a routerLink="/itemList" routerLinkActive="active" class="nav-link" ><p style="color:white">Items List</p></a>
+        </li>
+        <li class = "nav-item">
+            <a routerLink="/adminHome" routerLinkActive="active" class="nav-link" ><p style="color:white">Home </p></a>
+        </li>
+       
+    </ul>
+    <button (click)="logOut()"class="btn btn-danger navbar-btn">Log out</button>
+    </div>
+</nav>
+
+<h2 style="text-align:center">Payment List</h2>
+<div class="card">
+    <div class="card-body">
+<table class = "table table-striped">
+    <thead >
+        <tr>
+            <th>Payment Id</th>
+            <th>Payment Type</th>
+            <th>Amount</th>
+            <th>Payment Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let payment of payments" >
+            <td> {{ payment.paymentId}} </td>
+            <td> {{ payment.paymentType}}</td>
+            <td> {{ payment.amount}}</td>
+            <td> {{ payment.paymentDate}}</td>
+
+          </tr>
+    </tbody>
+</table>
+    </div></div>
+
+
+
+
